@@ -1,9 +1,10 @@
+import './app.scss';
 
 export default function App() {
 
   return (
     <>
-      <h2>Hello world!</h2>
+      <h2 className='myTitle'>hello world!!!</h2>
     </>
   )
 }
