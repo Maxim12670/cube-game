@@ -1,0 +1,51 @@
+
+.myButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.6rem;
+  color: $c-white;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.green {
+  border-bottom: .1rem solid $c-light-green;
+  background-color: $c-green;
+  
+  &:hover {
+    background-color: $c-light-green;
+  }
+
+  &:disabled {
+    background: rgb(55, 172, 0);
+    opacity: 0.3;
+  }
+}
+
+.violet {
+  border-bottom: .1rem solid rgb(145, 89, 190);;
+  background-color: $c-violet;
+
+  &:hover {
+    background-color: $c-light-violet;
+  }
+}
+
+.active {
+  background-color: $c-orange;
+
+  &:hover {
+    background-color: $c-orange;
+  }
+}
+
+input {
+  border: none;
+}
