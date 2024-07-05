@@ -1,0 +1,49 @@
+.myInput {
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  border: .1rem solid rgb(203, 213, 225);
+  border-radius: .6rem;
+  padding: .8rem 1.2rem .8rem 1.2rem;
+  background-color: $c-white;
+  outline: none;
+
+  font-size: 1.6rem;
+  letter-spacing: 0%;
+
+  &:focus {
+    border: .1rem solid rgb(56, 147, 255);
+  }
+
+  &:disabled {
+    opacity: .3;
+  }
+
+  &_error {
+    border: .1rem solid $c-red;
+
+    &:focus {
+      border: .1rem solid $c-red;
+    }
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.errorLabel {
+  display: block;
+  visibility: hidden;
+
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: $c-red;
+
+  &.active {
+    visibility: visible;
+  }
+}
