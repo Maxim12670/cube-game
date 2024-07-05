@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import style from './MyInput.module.scss';
 import { isValudateString } from '../../lib/regex/validateString';
 
@@ -15,8 +15,10 @@ const MyInput: FC<MyInputProps> = ({ type = 'text', placeholder, isDisabled = fa
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
-    setHasError(!isValudateString(inputValue))
   }
+  useEffect(() => {
+    setHasError(!isValudateString(inputValue))
+  }, [inputValue])
 
   return (
     <>
@@ -26,7 +28,8 @@ const MyInput: FC<MyInputProps> = ({ type = 'text', placeholder, isDisabled = fa
         value={inputValue}
         className={`${style.myInput} ${hasError ? style.myInput_error : ''}`}
         placeholder={placeholder}
-        onChange={handleChange} />
+        onChange={handleChange}
+      />
 
       <span className={`${style.errorLabel} ${hasError ? style.active : ''}`}>
         label
