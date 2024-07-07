@@ -2,10 +2,11 @@
 .button {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   
   width: 100%;
   height: 100%;
+  padding: 1rem 1.6rem;
   box-sizing: border-box;
   border-radius: 0.5rem;
   border: none;

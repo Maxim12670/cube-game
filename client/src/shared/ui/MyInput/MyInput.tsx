@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import style from './MyInput.module.scss';
-import { isValudateString } from '../../lib/regex/validateString';
+import { isValidateString } from '../../lib/regex/validateString';
 
 interface MyInputProps {
   type?: 'text' | 'number',
@@ -17,7 +17,7 @@ const MyInput: FC<MyInputProps> = ({ type = 'text', placeholder, isDisabled = fa
     setInputValue(e.target.value);
   }
   useEffect(() => {
-    setHasError(!isValudateString(inputValue))
+    setHasError(!isValidateString(inputValue))
   }, [inputValue])
 
   return (

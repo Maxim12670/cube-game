@@ -5,7 +5,7 @@ interface MyButtonProps {
   colorType: 'green' | 'violet',
   isDisabled?: boolean,
   isActive?: boolean,
-  children?: ReactNode 
+  children?: ReactNode | string
 }
 
 const MyButton: FC<MyButtonProps> =

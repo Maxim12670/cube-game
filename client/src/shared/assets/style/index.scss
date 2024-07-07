@@ -16,6 +16,7 @@
 html {
   box-sizing: border-box;
   font-size: calc(100vw / 1920 * 10);
+  background-color: $c-light-grey;
 }
 
 @media (max-width: 1024px) {
