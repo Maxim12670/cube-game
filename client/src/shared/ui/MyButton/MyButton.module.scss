@@ -1,5 +1,5 @@
 
-.myButton {
+.button {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -44,8 +44,4 @@
   &:hover {
     background-color: $c-orange;
   }
-}
-
-input {
-  border: none;
 }

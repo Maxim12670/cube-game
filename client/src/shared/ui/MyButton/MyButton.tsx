@@ -14,7 +14,7 @@ const MyButton: FC<MyButtonProps> =
     return (
       <button
         disabled={isDisabled}
-        className={`${style.myButton} ${style[colorType]} ${isActive ? style.active : ''}`}>
+        className={`${style.button} ${style[colorType]} ${isActive ? style.active : ''}`}>
         {children}
       </button>
     )
