@@ -3,7 +3,7 @@ import style from './MyInput.module.scss';
 import { isValudateString } from '../../lib/regex/validateString';
 
 interface MyInputProps {
-  type: 'text' | 'number',
+  type?: 'text' | 'number',
   placeholder: string,
   isDisabled?: boolean
 }
@@ -26,12 +26,12 @@ const MyInput: FC<MyInputProps> = ({ type = 'text', placeholder, isDisabled = fa
         type={type}
         disabled={isDisabled}
         value={inputValue}
-        className={`${style.myInput} ${hasError ? style.myInput_error : ''}`}
+        className={`${style.input} ${hasError ? style['input_error'] : ''}`}
         placeholder={placeholder}
         onChange={handleChange}
       />
 
-      <span className={`${style.errorLabel} ${hasError ? style.active : ''}`}>
+      <span className={`${style['error-label']} ${hasError ? style.active : ''}`}>
         label
       </span>
     </>
