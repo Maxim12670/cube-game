@@ -5,7 +5,7 @@
   justify-content: center;
   width: 130px;
   height: 130px;
-  border: 1px solid black;
+  border: .2rem solid $c-dark-violet;
   border-radius: .5rem;
 }
 
@@ -30,50 +30,6 @@
   grid-template-rows: repeat(3, 1fr);
   gap: 10px;
   transform-style: preserve-3d;
-}
-
-.dot {
-  width: 15px; 
-  height: 15px; 
-  background-color: black;
-  border-radius: 50%;
-  justify-self: center;
-  align-self: center;
-}
-
-.dot.center {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.dot.top-left {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.dot.top-center {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.dot.top-right {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.dot.bottom-left {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.dot.bottom-center {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.dot.bottom-right {
-  grid-column: 3;
-  grid-row: 3;
 }
 
 .rolling {

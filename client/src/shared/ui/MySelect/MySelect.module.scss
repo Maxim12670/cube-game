@@ -13,6 +13,7 @@
     padding: .8rem 1.2rem;
     outline: none;
 
+    color: $c-black;
     font-size: 1.6rem;
     line-height: 2.4rem;
     letter-spacing: 0;
@@ -27,13 +28,13 @@
       content: '';
       position: absolute;
       top: 50%;
-      right: 20px;
+      right: 2rem;
       transform: translateY(-50%);
       background-image: url('../../assets/icon/arrow-down.svg');
       background-repeat: no-repeat;
       background-position: center center;
-      width: 20px;
-      height: 20px;
+      width: 2rem;
+      height: 2rem;
       pointer-events: none;
     }
 

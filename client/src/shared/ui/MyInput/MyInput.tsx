@@ -3,36 +3,34 @@ import style from './MyInput.module.scss';
 import { isValidateString } from '../../lib/regex/validateString';
 
 interface MyInputProps {
-  type?: 'text' | 'number',
-  placeholder: string,
-  isDisabled?: boolean
+  type?: 'text' | 'number';
+  value: string;
+  className?: string;
+  placeholder: string;
+  isDisabled?: boolean;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const MyInput: FC<MyInputProps> = ({ type = 'text', placeholder, isDisabled = false }) => {
+const MyInput: FC<MyInputProps> = ({ type = 'text', value, className, placeholder, isDisabled = false, onChange }) => {
 
   const [hasError, setHasError] = useState(false);
-  const [inputValue, setInputValue] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  }
   useEffect(() => {
-    setHasError(!isValidateString(inputValue))
-  }, [inputValue])
+    setHasError(!isValidateString(value))
+  }, [value]);
 
   return (
     <>
       <input
         type={type}
         disabled={isDisabled}
-        value={inputValue}
-        className={`${style.input} ${hasError ? style['input_error'] : ''}`}
+        value={value}
+        className={`${className} ${style.input} ${hasError ? style['input_error'] : ''}`}
         placeholder={placeholder}
-        onChange={handleChange}
+        onChange={onChange}
       />
-
       <span className={`${style['error-label']} ${hasError ? style.active : ''}`}>
-        label
+        Error
       </span>
     </>
   )

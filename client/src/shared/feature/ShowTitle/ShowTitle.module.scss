@@ -1,0 +1,18 @@
+.game {
+  &__title {
+    font-weight: 700;
+    line-height: 2.4rem;
+    letter-spacing: 0%;
+    color: $c-white;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+    letter-spacing: 0%;
+    color: $c-white;
+    text-align: center;
+  }
+}
