@@ -3,7 +3,7 @@ import style from './MyInput.module.scss';
 import { isValidateString } from '../../lib/regex/validateString';
 
 interface MyInputProps {
-  type?: 'text' | 'number';
+  type?: 'text' | 'number' | 'password';
   value: string;
   className?: string;
   placeholder: string;

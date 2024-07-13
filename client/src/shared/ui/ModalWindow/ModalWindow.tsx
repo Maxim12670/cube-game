@@ -48,7 +48,7 @@ const ModalWindow: React.FC<ModalWindowProps> = ({ isOpen, closeModal, submitFor
             value={login}
             onChange={handleInputLogin} />
           <MyInput
-            type='text'
+            type='password'
             placeholder='Password'
             className={style['modal__input']}
             value={password}
