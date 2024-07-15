@@ -15,6 +15,7 @@ function Game({ isAuth }: GameProps) {
   const [currentBtn, setCurrentBtn] = useState<string | null>(null);
   const [currentNumber, setCurrentNumber] = useState<number>(1);
   const [canStart, setCanStart] = useState<boolean>(false);
+  const [hasInputError, setHasInputError] = useState<boolean>(false);
   const [betSize, setBetSize] = useState<number | undefined>(selectValues[0]);
   const [title, setTitle] = useState(
     <h2 className={`${style['game__title']} ${isAuth ? style.active : ''}`}>Сделайте ставку</h2>);
@@ -49,12 +50,12 @@ function Game({ isAuth }: GameProps) {
   }, [currentBtn]);
 
   useEffect(() => {
-    if(betSize! <= balance && currentBtn !== null) {
-      setCanStart(true)
+    if(betSize! <= balance && currentBtn !== null && !hasInputError) {
+      setCanStart(true);
     } else {
       setCanStart(false);
     }
-  })
+  }, [betSize, currentBtn, balance, hasInputError]);
 
   return (
     <div>
@@ -95,6 +96,7 @@ function Game({ isAuth }: GameProps) {
                 isActive={currentBtn === 'btn-input'}
                 currentNumber={currentNumber}
                 onChange={handleInputNumber}
+                onErrorChange={setHasInputError}
                 onClick={() => handleSelectCurrentBtn('btn-input')}
               />
             </div>

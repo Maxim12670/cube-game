@@ -7,16 +7,21 @@ interface MyButtonCountProps {
   currentNumber: number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
+  onErrorChange: (value: boolean) => void;
 }
 
 const MyButtonCount: React.FC<MyButtonCountProps> =
-  ({ isActive = false, currentNumber, onChange, onClick }) => {
+  ({ isActive = false, currentNumber, onChange, onClick, onErrorChange}) => {
 
     const [hasError, setHasError] = useState<boolean>(false);
 
     useEffect(() => {
-      setHasError(!isValidateCount(String(currentNumber)))
-    }, [currentNumber])
+      const errorStatus = !isValidateCount(String(currentNumber));
+      setHasError(errorStatus);
+      if (onErrorChange) {
+        onErrorChange(errorStatus);
+      }
+    }, [currentNumber, onErrorChange]);
 
     return (
       <div className={style.wrapper}>
